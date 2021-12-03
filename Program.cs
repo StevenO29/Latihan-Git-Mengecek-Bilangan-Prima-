@@ -6,21 +6,28 @@ namespace Latihan_Git_Mengecek_Bilangan_Prima
     {
         static void Main(string[] args)
         {
-            Console.Write("Masukkan angka yang akan dicek : ");
-            int inputAngka = Convert.ToInt32(Console.ReadLine());
-            int jumlahAngka = 0;
-            for (int pengulanganAngka = 1; pengulanganAngka <= inputAngka; pengulanganAngka++)
+            while (true)
             {
-                int sisaAngka = inputAngka % pengulanganAngka;
-                if (sisaAngka == 0)
-                    jumlahAngka += 1;
+                Console.Write("Masukkan angka yang akan dicek : ");
+                int inputAngka = Convert.ToInt32(Console.ReadLine());
+                int jumlahAngka = 0;
+                for (int pengulanganAngka = 1; pengulanganAngka <= inputAngka; pengulanganAngka++)
+                {
+                    int sisaAngka = inputAngka % pengulanganAngka;
+                    if (sisaAngka == 0)
+                        jumlahAngka += 1;
+                    else
+                        _ = jumlahAngka == 0;
+                }
+                if (jumlahAngka > 2)
+                    Console.Write($"\n{inputAngka} adalah bukan bilangan prima");
                 else
-                    _ = jumlahAngka == 0;
+                    Console.Write($"\n{inputAngka} adalah bilangan prima");
+                Console.Write("\nApakah ingin mengulang program? (y/n) \n==> ");
+                string pengulanganProgram = Console.ReadLine();
+                if (pengulanganProgram == "n")
+                    System.Environment.Exit(0);
             }
-            if (jumlahAngka > 2)
-                Console.Write($"\n{inputAngka} adalah bukan bilangan prima");
-            else
-                Console.Write($"\n{inputAngka} adalah bilangan prima");
         }
     }
 }
